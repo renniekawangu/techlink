@@ -530,6 +530,22 @@ textarea:focus-visible {
   gap: 1rem;
 }
 
+.product-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.product-results {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 1280px) {
+  .product-layout {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
 .filter-fields {
   display: grid;
   gap: 1rem;
@@ -710,25 +726,6 @@ textarea:focus-visible {
     flex-direction: column;
   }
 
-  .filter-panel {
-    position: static;
-  }
-}
-
-@media (max-width: 640px) {
-  .top-link {
-    display: none;
-  }
-
-  .hero-image {
-    min-height: 280px;
-  }
-
-  .stock-badge {
-    position: static;
-    margin-top: 1rem;
-  }
-
   .page-shell {
     width: min(100% - 1rem, 80rem);
     padding-block: 1rem 2.5rem;
@@ -749,11 +746,19 @@ textarea:focus-visible {
     line-height: 1.6;
   }
 
+  .product-layout,
+  .product-results {
+    gap: 1rem;
+  }
+
   .filter-panel {
-    gap: 0.75rem;
-    padding: 0.8rem;
+    position: static;
+    gap: 0.65rem;
+    padding: 0.75rem;
     border-radius: 0.65rem;
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+    box-shadow: none;
+    border-color: #dbeafe;
+    background: #f8fbff;
   }
 
   .filter-toggle {
@@ -763,7 +768,7 @@ textarea:focus-visible {
   .filter-fields {
     display: none;
     gap: 0.75rem;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #dbeafe;
     padding-top: 0.75rem;
   }
 
@@ -824,7 +829,7 @@ textarea:focus-visible {
 
   .promo-band {
     background:
-      linear-gradient(145deg, rgba(15, 23, 42, 0.97), rgba(30, 64, 175, 0.88)),
+      linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(30, 64, 175, 0.9)),
       url("./assets/laptop.jpg") 58% center/cover;
   }
 
@@ -850,6 +855,7 @@ textarea:focus-visible {
 
   .promo-band .btn,
   .repair-band .btn {
+    width: 100%;
     min-height: 2.75rem;
     justify-content: center;
     padding: 0.78rem 0.9rem;
@@ -858,7 +864,22 @@ textarea:focus-visible {
   .repair-band {
     background: white;
     border-color: #dbeafe;
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+}
+
+@media (max-width: 640px) {
+  .top-link {
+    display: none;
+  }
+
+  .hero-image {
+    min-height: 280px;
+  }
+
+  .stock-badge {
+    position: static;
+    margin-top: 1rem;
   }
 
   .btn,

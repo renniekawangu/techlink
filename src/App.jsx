@@ -30,10 +30,6 @@ import {
 import { MdCameraswitch, MdEmail, MdOutlineStorage, MdSecurity } from 'react-icons/md';
 import { SiAcer, SiAsus, SiDell, SiEpson, SiHp, SiLenovo, SiLogitech, SiSamsung } from 'react-icons/si';
 import heroImage from './assets/iphone.png';
-import productImageA from './assets/single.png';
-import productImageB from './assets/double.png';
-import productImageC from './assets/triple.png';
-import phoneImage from './assets/hero.png';
 
 const product1 = 'https://media.johnlewiscontent.com/i/JohnLewis/013249427?fmt=auto&$background-off-white$';
 
@@ -449,7 +445,7 @@ function ProductsPage(props) {
   return (
     <div className="page-shell">
       <PageHero eyebrow="Digital showroom" title="Products" text="Search, filter, compare, and request a quote for the devices and systems your home, school, or business needs." />
-      <div className="grid gap-8 xl:grid-cols-[340px_1fr]">
+      <div className="product-layout">
         <aside className="filter-panel">
           <label className="field-label" htmlFor="product-search">Search products</label>
           <div className="search-box">
@@ -470,7 +466,7 @@ function ProductsPage(props) {
           </div>
         </aside>
 
-        <section className="space-y-8">
+        <section className="product-results">
           <ProductDetail product={props.selectedProduct} showPrices={props.showPrices} />
           <div className="flex items-end justify-between gap-4">
             <div>
