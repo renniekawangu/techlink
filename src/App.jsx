@@ -30,6 +30,10 @@ import {
 import { MdCameraswitch, MdEmail, MdOutlineStorage, MdSecurity } from 'react-icons/md';
 import { SiAcer, SiAsus, SiDell, SiEpson, SiHp, SiLenovo, SiLogitech, SiSamsung } from 'react-icons/si';
 import heroImage from './assets/iphone.png';
+import productImageA from './assets/single.png';
+import productImageB from './assets/double.png';
+import productImageC from './assets/triple.png';
+import phoneImage from './assets/hero.png';
 
 const product1 = 'https://media.johnlewiscontent.com/i/JohnLewis/013249427?fmt=auto&$background-off-white$';
 
@@ -784,7 +788,7 @@ function Footer({ navigate }) {
     <footer className="bg-slate-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-4 lg:px-8">
         <div>
-          <h2 className="text-xl font-black">TechHub Zambia</h2>
+          <h2 className="text-xl font-black">TECHLINK ELECTRONICS</h2>
           <p className="mt-3 text-sm leading-6 text-slate-300">Premium electronics, devices, repairs, and installations for local customers and businesses.</p>
           <div className="mt-4 flex gap-3">
             {[FaFacebookF, FaInstagram, FaTwitter].map((Icon, index) => <a key={index} className="social-link" href="https://example.com" aria-label="Social link"><Icon /></a>)}
