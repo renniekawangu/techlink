@@ -452,7 +452,7 @@ function ProductsPage(props) {
             <FaSearch />
             <input id="product-search" value={props.query} onChange={(event) => props.setQuery(event.target.value)} placeholder="Search by product, brand, or spec" />
           </div>
-          <button className="filter-toggle" type="button" onClick={() => setFiltersOpen(!filtersOpen)}>
+          <button className="md:hidden" type="button" onClick={() => setFiltersOpen(!filtersOpen)}>
             <span>Filters and sorting</span>
             <span>{filtersOpen ? 'Hide' : 'Show'}</span>
           </button>
