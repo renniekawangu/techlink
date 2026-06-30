@@ -479,6 +479,7 @@ textarea:focus-visible {
     linear-gradient(120deg, rgba(15, 23, 42, 0.96), rgba(30, 64, 175, 0.9)),
     url("./assets/laptop.jpg") center/cover;
   border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 .repair-band {
@@ -527,6 +528,26 @@ textarea:focus-visible {
   height: fit-content;
   display: grid;
   gap: 1rem;
+}
+
+.filter-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.filter-toggle {
+  display: none;
+  min-height: 2.6rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  padding: 0.65rem 0.8rem;
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 950;
 }
 
 .search-box {
@@ -706,6 +727,138 @@ textarea:focus-visible {
   .stock-badge {
     position: static;
     margin-top: 1rem;
+  }
+
+  .page-shell {
+    width: min(100% - 1rem, 80rem);
+    padding-block: 1rem 2.5rem;
+  }
+
+  .page-hero {
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    border-radius: 0.65rem;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .page-hero p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .filter-panel {
+    gap: 0.75rem;
+    padding: 0.8rem;
+    border-radius: 0.65rem;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+  }
+
+  .filter-toggle {
+    display: flex;
+  }
+
+  .filter-fields {
+    display: none;
+    gap: 0.75rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.75rem;
+  }
+
+  .filter-fields-open {
+    display: grid;
+  }
+
+  .search-box,
+  .search-box input,
+  .input {
+    min-height: 2.55rem;
+  }
+
+  .field-label {
+    margin-bottom: 0.3rem;
+    font-size: 0.72rem;
+  }
+
+  .detail-panel {
+    padding: 0.85rem;
+    border-radius: 0.65rem;
+  }
+
+  .detail-image {
+    aspect-ratio: 1 / 0.78;
+    padding: 0.7rem;
+  }
+
+  .thumb-image {
+    padding: 0.3rem;
+  }
+
+  .detail-panel h2 {
+    font-size: 1.55rem;
+    line-height: 1.15;
+  }
+
+  .detail-panel p {
+    line-height: 1.6;
+  }
+
+  .detail-panel .text-3xl {
+    font-size: 1.65rem;
+  }
+
+  .spec-item {
+    padding: 0.65rem;
+    font-size: 0.82rem;
+  }
+
+  .promo-band,
+  .repair-band {
+    margin-block: 1.25rem;
+    gap: 1rem;
+    padding: 1.15rem;
+    border-radius: 0.65rem;
+  }
+
+  .promo-band {
+    background:
+      linear-gradient(145deg, rgba(15, 23, 42, 0.97), rgba(30, 64, 175, 0.88)),
+      url("./assets/laptop.jpg") 58% center/cover;
+  }
+
+  .promo-band .eyebrow,
+  .repair-band .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .promo-band h2,
+  .repair-band .section-title {
+    margin-top: 0.35rem;
+    font-size: 1.38rem;
+    line-height: 1.18;
+  }
+
+  .promo-band p,
+  .repair-band .content-text {
+    margin-top: 0.65rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .promo-band .btn,
+  .repair-band .btn {
+    min-height: 2.75rem;
+    justify-content: center;
+    padding: 0.78rem 0.9rem;
+  }
+
+  .repair-band {
+    background: white;
+    border-color: #dbeafe;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
   }
 
   .btn,

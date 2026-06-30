@@ -30,10 +30,6 @@ import {
 import { MdCameraswitch, MdEmail, MdOutlineStorage, MdSecurity } from 'react-icons/md';
 import { SiAcer, SiAsus, SiDell, SiEpson, SiHp, SiLenovo, SiLogitech, SiSamsung } from 'react-icons/si';
 import heroImage from './assets/iphone.png';
-import productImageA from './assets/single.png';
-import productImageB from './assets/double.png';
-import productImageC from './assets/triple.png';
-import phoneImage from './assets/hero.png';
 
 const product1 = 'https://media.johnlewiscontent.com/i/JohnLewis/013249427?fmt=auto&$background-off-white$';
 
@@ -396,10 +392,10 @@ function HomePage({ navigate, openProduct, showPrices, setShowPrices }) {
           </div>
           <div className="relative">
             <img src={heroImage} alt="Modern laptop workstation" className="hero-image" />
-            <div className="stock-badge">
+            {/*<div className="stock-badge">
               <FaCheckCircle className="text-emerald-400" />
               <span><strong>Ready stock</strong> for business, home, and school</span>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>
@@ -440,6 +436,7 @@ function HomePage({ navigate, openProduct, showPrices, setShowPrices }) {
 }
 
 function ProductsPage(props) {
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const related = products
     .filter((product) => product.id !== props.selectedProduct.id && product.category === props.selectedProduct.category)
     .concat(products.filter((product) => product.id !== props.selectedProduct.id))
@@ -455,12 +452,18 @@ function ProductsPage(props) {
             <FaSearch />
             <input id="product-search" value={props.query} onChange={(event) => props.setQuery(event.target.value)} placeholder="Search by product, brand, or spec" />
           </div>
-          <Select label="Category" value={props.category} onChange={props.setCategory} options={['All', ...categories.map((item) => item.name)]} />
-          <Select label="Brand" value={props.brand} onChange={props.setBrand} options={['All', ...brands.map((item) => item.name)]} />
-          <Select label="Price range" value={props.priceRange} onChange={props.setPriceRange} options={['All', 'Under K5,000', 'K5,000 - K15,000', 'Above K15,000']} />
-          <Select label="Availability" value={props.availability} onChange={props.setAvailability} options={['All', 'In Stock', 'Out of Stock']} />
-          <Select label="Sort" value={props.sort} onChange={props.setSort} options={['Newest', 'Price low to high', 'Price high to low']} />
-          <PriceToggle showPrices={props.showPrices} setShowPrices={props.setShowPrices} />
+          <button className="filter-toggle" type="button" onClick={() => setFiltersOpen(!filtersOpen)}>
+            <span>Filters and sorting</span>
+            <span>{filtersOpen ? 'Hide' : 'Show'}</span>
+          </button>
+          <div className={`filter-fields ${filtersOpen ? 'filter-fields-open' : ''}`}>
+            <Select label="Category" value={props.category} onChange={props.setCategory} options={['All', ...categories.map((item) => item.name)]} />
+            <Select label="Brand" value={props.brand} onChange={props.setBrand} options={['All', ...brands.map((item) => item.name)]} />
+            <Select label="Price range" value={props.priceRange} onChange={props.setPriceRange} options={['All', 'Under K5,000', 'K5,000 - K15,000', 'Above K15,000']} />
+            <Select label="Availability" value={props.availability} onChange={props.setAvailability} options={['All', 'In Stock', 'Out of Stock']} />
+            <Select label="Sort" value={props.sort} onChange={props.setSort} options={['Newest', 'Price low to high', 'Price high to low']} />
+            <PriceToggle showPrices={props.showPrices} setShowPrices={props.setShowPrices} />
+          </div>
         </aside>
 
         <section className="space-y-8">
