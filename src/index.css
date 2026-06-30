@@ -693,7 +693,7 @@ textarea:focus-visible {
 .footer-title {
   font-size: 0.9rem;
   font-weight: 950;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.F08em;
   text-transform: uppercase;
   color: white;
 }
@@ -765,6 +765,7 @@ textarea:focus-visible {
 
   .filter-toggle {
     display: flex;
+    md:hidden;
   }
 
   .filter-fields {
