@@ -371,7 +371,7 @@ function HomePage({ navigate, openProduct, showPrices, setShowPrices }) {
   return (
     <>
       <section className="hero-band">
-        <div className="mx-auto grid min-h-[650px] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="mx-auto grid min-h-[420px] lg:min-h-[650px] max-w-7xl items-center gap-10 px-4 py-12 lg:py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="max-w-3xl text-white">
             <div className="promo-pill"><FaStar /> Mid-year tech deals now available in-store</div>
             <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
@@ -677,10 +677,10 @@ function ContactPage({ compact = false }) {
         </form>
         <div className="space-y-5">
           <div className="contact-card">
-            <h3>TechHub Zambia Showroom</h3>
+            <h3>TECHLINK Electronics Showroom</h3>
             <p><FaMapMarkerAlt /> Cairo Road, Lusaka, Zambia</p>
             <p><FaPhoneAlt /> +260 970 000 000</p>
-            <p><MdEmail /> sales@techhubzambia.co.zm</p>
+            <p><MdEmail /> sales@techlinkzambia.co.zm</p>
             <p><FaCheckCircle /> Monday - Saturday, 08:00 - 18:00</p>
           </div>
           <iframe
