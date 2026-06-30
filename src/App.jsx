@@ -80,7 +80,7 @@ const products = [
     availability: 'In Stock',
     newest: true,
     warranty: '12 months official warranty',
-    images: [product1, product1, product1],
+    images: [product1],
     description: 'Flagship 5G smartphone with a bright AMOLED display, pro-grade camera system, and all-day battery life.',
     specs: ['6.8-inch Dynamic AMOLED', '256GB storage', '12GB RAM', '50MP triple camera', 'Fast charging'],
   },
@@ -324,7 +324,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
             <span className="block text-[0.50rem] text-center font-semibold uppercase tracking-[0.16em] text-[#1B2C5A]">Electronics</span>
           </span>
         </button>
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <button
               key={item}
@@ -335,7 +335,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
             </button>
           ))}
         </div>
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <button onClick={() => navigate('Products')} className="btn btn-soft"><FaSearch /> Browse</button>
           <a href={`https://wa.me/${whatsappNumber}`} className="btn btn-primary"><FaWhatsapp /> Enquire</a>
         </div>
@@ -348,7 +348,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
         </button>
       </nav>
       {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 pb-4 lg:hidden">
+        <div className="border-t border-slate-200 bg-white px-4 pb-4 md:hidden">
           {navItems.map((item) => (
             <button
               key={item}
@@ -371,7 +371,7 @@ function HomePage({ navigate, openProduct, showPrices, setShowPrices }) {
   return (
     <>
       <section className="hero-band">
-        <div className="mx-auto grid min-h-[420px] lg:min-h-[650px] max-w-7xl items-center gap-10 px-4 py-12 lg:py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="mx-auto grid min-h-162.5 max-w-7xl items-center gap-10 px-4 py-12 lg:py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="max-w-3xl text-white">
             <div className="promo-pill"><FaStar /> Mid-year tech deals now available in-store</div>
             <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
@@ -490,8 +490,8 @@ function ProductDetail({ product, showPrices }) {
         <div>
           <img src={product.images[0]} alt={product.name} className="detail-image" />
           <div className="mt-3 grid grid-cols-3 gap-3">
-            {product.images.map((image) => (
-              <img key={image} src={image} alt={`${product.name} preview`} className="thumb-image" />
+            {product.images.map((image, idx) => (
+              <img key={`${product.id}-${idx}`} src={image} alt={`${product.name} preview`} className="thumb-image" />
             ))}
           </div>
         </div>
