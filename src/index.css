@@ -761,12 +761,12 @@ textarea:focus-visible {
     box-shadow: none;
     border-color: #dbeafe;
     background: #f8fbff;
-  }
-
-  .filter-toggle {
-    display: flex;
     md:hidden;
   }
+
+  /*.filter-toggle {
+    md:hidden;
+  }*/
 
   .filter-fields {
     display: none;
