@@ -324,7 +324,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
             <span className="block text-[0.50rem] text-center font-semibold uppercase tracking-[0.16em] text-[#1B2C5A]">Electronics</span>
           </span>
         </button>
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <button
               key={item}
@@ -335,7 +335,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
             </button>
           ))}
         </div>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <button onClick={() => navigate('Products')} className="btn btn-soft"><FaSearch /> Browse</button>
           <a href={`https://wa.me/${whatsappNumber}`} className="btn btn-primary"><FaWhatsapp /> Enquire</a>
         </div>
@@ -348,7 +348,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
         </button>
       </nav>
       {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 pb-4 md:hidden">
+        <div className="border-t border-slate-200 bg-white px-4 pb-4 lg:hidden">
           {navItems.map((item) => (
             <button
               key={item}
@@ -371,7 +371,7 @@ function HomePage({ navigate, openProduct, showPrices, setShowPrices }) {
   return (
     <>
       <section className="hero-band">
-        <div className="mx-auto grid min-h-162.5 max-w-7xl items-center gap-10 px-4 py-12 lg:py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="mx-auto grid min-h-162.5 max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="max-w-3xl text-white">
             <div className="promo-pill"><FaStar /> Mid-year tech deals now available in-store</div>
             <h1 className="mt-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
@@ -446,7 +446,7 @@ function ProductsPage(props) {
     <div className="page-shell">
       <PageHero eyebrow="Digital showroom" title="Products" text="Search, filter, compare, and request a quote for the devices and systems your home, school, or business needs." />
       <div className="product-layout">
-        <aside className="filter-panel">
+       {/* <aside className="filter-panel">
           <label className="field-label" htmlFor="product-search">Search products</label>
           <div className="search-box">
             <FaSearch />
@@ -464,7 +464,7 @@ function ProductsPage(props) {
             <Select label="Sort" value={props.sort} onChange={props.setSort} options={['Newest', 'Price low to high', 'Price high to low']} />
             <PriceToggle showPrices={props.showPrices} setShowPrices={props.setShowPrices} />
           </div>
-        </aside>
+        </aside>*/}
 
         <section className="product-results">
           <ProductDetail product={props.selectedProduct} showPrices={props.showPrices} />
@@ -505,7 +505,7 @@ function ProductDetail({ product, showPrices }) {
           <p className="mt-3 text-slate-600">{product.description}</p>
           <p className="mt-5 text-3xl font-black text-blue-800">{showPrices ? formatPrice(product.price) : 'Price on request'}</p>
           <p className="mt-2 text-sm font-semibold text-slate-500">{product.warranty}</p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 sm:grid-cols-1 md:grid-cols-2">
             {product.specs.map((spec) => (
               <span key={spec} className="spec-item"><FaCheckCircle /> {spec}</span>
             ))}
@@ -532,7 +532,7 @@ function ProductGrid({ products: list, openProduct, showPrices, compact = false 
   }
 
   return (
-    <div className={`section-shell grid gap-5 ${compact ? 'md:grid-cols-3' : 'sm:grid-cols-2 xl:grid-cols-4'}`}>
+    <div className={`section-shell grid gap-5 ${compact ? 'md:grid-cols-3' : 'sm:grid-cols-1 lg:grid-cols-4'}`}>
       {list.map((product) => (
         <article key={product.id} className="product-card">
           <button onClick={() => openProduct(product)} className="block w-full text-left" aria-label={`View ${product.name}`}>
@@ -595,7 +595,7 @@ function ServicesPage() {
 
 function ServiceGrid() {
   return (
-    <section className="section-shell grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <section className="section-shell grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {services.map(({ title, icon: Icon, time, text }) => (
         <article className="service-card" key={title}>
           <Icon className="service-icon" />
@@ -615,7 +615,7 @@ function BrandsPage({ openProduct }) {
   return (
     <div className="page-shell">
       <PageHero eyebrow="Brands" title="Explore trusted manufacturers" text="Dedicated brand sections help customers browse the product families and support options they already know." />
-      <section className="section-shell grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="section-shell grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {brands.map(({ name, icon: Icon, focus }) => (
           <article className="brand-card" id={slugify(name)} key={name}>
             <Icon className="brand-logo" />
@@ -641,7 +641,7 @@ function PromotionsPage({ navigate }) {
   return (
     <div className="page-shell">
       <PageHero eyebrow="Promotions" title="Deals, bundles, and limited-time offers" text="Use promotions to highlight new arrivals, student bundles, weekly specials, clearance sales, and in-store offers." />
-      <section className="section-shell grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <section className="section-shell grid gap-5 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
         {promotions.map((promo) => (
           <article className="promo-card" key={promo.title}>
             <span>{promo.tag}</span>
@@ -662,7 +662,7 @@ function ContactPage({ compact = false }) {
       {compact && <SectionIntro eyebrow="Contact and Location" title="Ready to enquire or visit the store?" />}
       <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
         <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
             <Input label="Full name" placeholder="Your name" />
             <Input label="Phone number" placeholder="+260..." />
           </div>
