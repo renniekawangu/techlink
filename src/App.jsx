@@ -446,7 +446,7 @@ function ProductsPage(props) {
     <div className="page-shell">
       <PageHero eyebrow="Digital showroom" title="Products" text="Search, filter, compare, and request a quote for the devices and systems your home, school, or business needs." />
       <div className="product-layout">
-       <aside className="filter-panel">
+       {/*<aside className="filter-panel">
           <label className="field-label" htmlFor="product-search">Search products</label>
           <div className="search-box">
             <FaSearch />
@@ -464,7 +464,7 @@ function ProductsPage(props) {
             <Select label="Sort" value={props.sort} onChange={props.setSort} options={['Newest', 'Price low to high', 'Price high to low']} />
             <PriceToggle showPrices={props.showPrices} setShowPrices={props.setShowPrices} />
           </div>
-        </aside>
+        </aside>*/}
 
         <section className="product-results">
           <ProductDetail product={props.selectedProduct} showPrices={props.showPrices} />
