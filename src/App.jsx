@@ -1,4 +1,6 @@
 import { useMemo, useState } from 'react';
+import logo from './assets/logo.jpg';
+
 import {
   FaApple,
   FaAsymmetrik,
@@ -320,8 +322,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
             <FaMicrochip />
           </span>*/}
           <span>
-            <span className="block text-2xl font-black tracking-tight text-[#1B2C5A]">TECHLINK</span>
-            <span className="block text-[0.50rem] text-center font-semibold uppercase tracking-[0.16em] text-[#1B2C5A]">Electronics</span>
+            <img src={logo} alt="TechHub Zambia logo" className="h-8 w-auto" />
           </span>
         </button>
         <div className="hidden items-center gap-1 lg:flex">
@@ -353,7 +354,7 @@ function Header({ activePage, navigate, mobileOpen, setMobileOpen }) {
             <button
               key={item}
               onClick={() => navigate(item)}
-              className={`block w-full rounded-md px-3 py-3 text-left text-sm font-bold ${activePage === item ? 'bg-blue-50 text-blue-800' : 'text-slate-700'}`}
+              className={`block w-full rounded-md px-3 py-3 text-left text-sm font-bold ${activePage === item ? 'bg-blue-50 text-[#E31837]' : 'text-slate-700'}`}
             >
               {item}
             </button>
@@ -503,7 +504,7 @@ function ProductDetail({ product, showPrices }) {
           </div>
           <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950">{product.name}</h2>
           <p className="mt-3 text-slate-600">{product.description}</p>
-          <p className="mt-5 text-3xl font-black text-blue-800">{showPrices ? formatPrice(product.price) : 'Price on request'}</p>
+          <p className="mt-5 text-3xl font-black text-[#E31837]">{showPrices ? formatPrice(product.price) : 'Price on request'}</p>
           <p className="mt-2 text-sm font-semibold text-slate-500">{product.warranty}</p>
           <div className="mt-6 grid gap-3 sm:grid-cols-1 md:grid-cols-2">
             {product.specs.map((spec) => (
@@ -544,7 +545,7 @@ function ProductGrid({ products: list, openProduct, showPrices, compact = false 
             <h3 className="mt-3 min-h-14 text-lg font-black leading-tight text-slate-950">{product.name}</h3>
             <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">{product.description}</p>
             <div className="mt-4 flex items-center justify-between">
-              <strong className="text-xl text-blue-800">{showPrices ? formatPrice(product.price) : 'Quote'}</strong>
+              <strong className="text-xl text-[#E31837]">{showPrices ? formatPrice(product.price) : 'Quote'}</strong>
               <span className="text-xs font-bold uppercase tracking-wide text-slate-500">{product.availability}</span>
             </div>
           </button>
@@ -727,7 +728,7 @@ function Testimonials() {
       <section className="section-shell grid gap-5 md:grid-cols-3">
         {testimonials.map((testimonial) => (
           <article className="testimonial-card" key={testimonial.name}>
-            <FaQuoteRight className="text-sky-600" />
+            <FaQuoteRight className="text-[#E31837]" />
             <p>{testimonial.quote}</p>
             <strong>{testimonial.name}</strong>
             <span>{testimonial.role}</span>
